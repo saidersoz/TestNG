@@ -1,8 +1,39 @@
 package techproed.tests;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class Day22_TestNG_Annotations {
+
+    /*
+    @Test : Test case oluşturmak için kullanılır.
+        @Before ve @After : 5 Before ve 5 After anotation bulunur.
+        --> Suite > Tests > Groups > Class > Method
+            @BeforeSuite : Herbir test suite'inden önce 1 kez çalışır.
+            @AfterSuite : Herbir test suite'inden sonra 1 kez çalışır.
+            @BeforeTest : Herbir test öncesi 1 kez çalışır. (Herbir test case'i öncesi değil!!!)
+
+     */
+
+    @BeforeSuite
+    public void beforeSuite(){
+        System.out.println("Before Suite");
+    }
+
+    @AfterSuite
+    public void afterSuite(){
+        System.out.println("After Suite");
+    }
+
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("Before Test");
+    }
+
+    @AfterTest
+    public void afterTest() {
+        System.out.println("After Test");
+    }
+
 
     @Test
     public void test01() {
