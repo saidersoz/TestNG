@@ -12,7 +12,7 @@ public class Day22_TestNG_Annotations {
                   @AfterSuite : Herbir test suite'inden sonra 1 kez çalışır.
 
                   @BeforeTest : Test öncesi 1 kez çalışır. (Herbir test case'i öncesi değil!!!)
-                  @BeforeTest : Test sonrası 1 kez çalışır. (Herbir test case'i öncesi değil!!!)
+                  @AfterTest : Test sonrası 1 kez çalışır. (Herbir test case'i öncesi değil!!!)
 
                   @BeforeGroups : Özel belirtilmiş herhangi bir grup öncesi çalışır.
                   @AfterGroups : Özel belirtilmiş herhangi bir grup sonrası çalışır.
