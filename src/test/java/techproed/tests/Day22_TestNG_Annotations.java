@@ -107,5 +107,7 @@ public class Day22_TestNG_Annotations {
     @Test
     public void test07() {
         System.out.println("Test 7");
+        System.out.println("Test 7");
     }
 }
+
