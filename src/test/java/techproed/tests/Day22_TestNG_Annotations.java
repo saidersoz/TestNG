@@ -22,6 +22,13 @@ public class Day22_TestNG_Annotations {
 
                   @Before : Herbir test methodu öncesinde 1 kere çalışır
                   @After : Herbir test methodu sonrasında 1 kere çalışır
+                  ----------
+                  TestNG'de test method'ları alfabedik sıraya göreye çalışır.
+                  @Test(priorty = 1) Test cade'lere öncelikli çalıştırmak için kullanılır.
+                  Not ::: Priorty kullanılmayan testlerin varsayılan priorty değeri 'dır.
+                  ----------
+                  @Ignore : @Test case'leri atlamak için kullanılır.
+                  @Test(enable = false) : @Test case'leri kullanıma kapatmak için kullanılır.
      */
 
     @BeforeSuite
@@ -89,22 +96,24 @@ public class Day22_TestNG_Annotations {
         System.out.println("Test 3");
     }
 
+    @Ignore
     @Test
+    //çalışmam devam ediyor...
     public void test04() {
         System.out.println("Test 4");
     }
 
-    @Test(groups = "regression-test")
+    @Test(groups = "regression-test", priority = 1) // en son çalışır ==> çünkü default priorty değeri 'dır.
     public void test05() {
         System.out.println("Test 5");
     }
 
-    @Test
+    @Test(priority = -1) //İlk çalışır==> Çünkü priority değeri en düşüktür.
     public void test06() {
         System.out.println("Test 6");
     }
 
-    @Test
+    @Test(enabled = false)
     public void test07() {
         System.out.println("Test 7");
         System.out.println("Test 7");
