@@ -16,6 +16,8 @@ public class Day23_Driver_ConfigReader_Test{
 
         //Title testi yapınız
         assertTrue(Driver.getDriver().getTitle().contains("Techpro"));
+        System.out.println(ConfigReader.getProperty("username"));
+        System.out.println(ConfigReader.getProperty("password"));
 
         //sayfayı kapatınız.
         Driver.closeDriver();
