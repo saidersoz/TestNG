@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
+import techproed.utilities.ReusableMethods;
 
-public class NegativeTest {
+public class NegativeTest extends ReusableMethods {
 
     @Test
     public void test01() {
@@ -28,6 +29,7 @@ public class NegativeTest {
         blueRentalPage.login2.click();
 
         Driver.bekle(2);
+        ReusableMethods.tumSayfaResmi();
 
         Assert.assertTrue(blueRentalPage.fakeLoginAlert.isDisplayed());
 

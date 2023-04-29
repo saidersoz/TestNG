@@ -28,7 +28,6 @@ public class BlueRentalPage {
 
     @FindBy(xpath = "(//a[@role='button'])[1]")
     public WebElement logOut;
-
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement fakeLoginAlert;
 
