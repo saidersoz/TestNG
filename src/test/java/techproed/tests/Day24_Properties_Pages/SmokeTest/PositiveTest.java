@@ -1,6 +1,7 @@
 package techproed.tests.Day24_Properties_Pages.SmokeTest;
 
 import org.openqa.selenium.devtools.v110.input.model.DragData;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
 import techproed.utilities.ConfigReader;
@@ -29,7 +30,9 @@ public class PositiveTest {
         blueRentalPage.login2.click();
         Driver.bekle(1);
 
+        Assert.assertEquals(blueRentalPage.user.getText(), "Jack Nicholson");
 
+        Driver.bekle(1);
 
         Driver.closeDriver();
     }
