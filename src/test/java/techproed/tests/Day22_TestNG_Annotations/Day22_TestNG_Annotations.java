@@ -1,4 +1,4 @@
-package techproed.tests;
+package techproed.tests.Day22_TestNG_Annotations;
 
 import org.testng.annotations.*;
 

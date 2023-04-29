@@ -6,11 +6,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
+
+
+
 
 public class Driver {
+
+    /*
+    Driver class'ındaki temel mantık extends yöntemiyle değil yani TestBase class'ına extent etmek yerine
+    Driver class'ından static methodlar kullanarak driver oluştururuz. Static olduğu için class ismi ile
+    her yerden methoda ulaşabileceğiz.
+     */
+
+    /*
+    Singleton Pattern: Tekli kullanım kalıbı.
+    Bir class'dan obje oluşturulmasının önüne geçilmesi için kullanılan ifade.
+    Bunun için bir class'dan obje oluşturmanın önüne geçmek için default constructor'ın kullanımını engellemek için,
+    private access modifier kullanarak bir contructor oluşturuz.
+    */
 
     private static WebDriver driver;
 
@@ -46,12 +61,18 @@ public class Driver {
         return driver;
     }
 
-    public static void closeDriver() {
+    public static void quitDriver() {
         if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
 
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.close();
+            driver = null;
+        }
+    }
 
 }

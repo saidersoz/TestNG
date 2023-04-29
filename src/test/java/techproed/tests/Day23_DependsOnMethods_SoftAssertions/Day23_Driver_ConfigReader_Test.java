@@ -1,4 +1,4 @@
-package techproed.tests;
+package techproed.tests.Day23_DependsOnMethods_SoftAssertions;
 
 import org.testng.annotations.Test;
 import techproed.utilities.ConfigReader;
