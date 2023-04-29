@@ -24,9 +24,12 @@ public class BlueRentalPage {
     public WebElement login2;
 
     @FindBy(xpath = "//button[@id='dropdown-basic-button']")
-    public WebElement user;
+    public WebElement verify;
 
     @FindBy(xpath = "(//a[@role='button'])[1]")
     public WebElement logOut;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement fakeLoginAlert;
 
 }

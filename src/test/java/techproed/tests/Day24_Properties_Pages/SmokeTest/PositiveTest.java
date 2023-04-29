@@ -30,7 +30,7 @@ public class PositiveTest {
         blueRentalPage.login2.click();
         Driver.bekle(1);
 
-        Assert.assertEquals(blueRentalPage.user.getText(), "Jack Nicholson");
+        Assert.assertEquals(blueRentalPage.verify.getText(), "Jack Nicholson");
 
         Driver.bekle(1);
 
