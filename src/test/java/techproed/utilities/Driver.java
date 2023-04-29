@@ -6,10 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.time.Duration;
-
-
-
 
 
 public class Driver {
@@ -72,6 +70,15 @@ public class Driver {
         if (driver != null) {
             driver.close();
             driver = null;
+        }
+    }
+
+    //bekle
+    public static void bekle(int saniye) {
+        try {
+            Thread.sleep(saniye * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
