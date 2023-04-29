@@ -37,7 +37,6 @@ public class Driver {
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
-
             }
 
 
