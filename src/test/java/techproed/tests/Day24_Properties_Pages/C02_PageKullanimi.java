@@ -26,7 +26,7 @@ public class C02_PageKullanimi {
         openSourcePage.password.sendKeys(ConfigReader.getProperty("password"));
         openSourcePage.login.click();
 
-
+        Driver.bekle(3);
         //Login Testinin basarili oldugunu test et
         Assert.assertTrue(openSourcePage.dashboard.isDisplayed());
 
