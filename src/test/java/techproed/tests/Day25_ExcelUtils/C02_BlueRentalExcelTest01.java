@@ -7,7 +7,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ExcelUtils;
 
-public class C02_BlueRentalExcelTest {
+public class C02_BlueRentalExcelTest01 {
 
     @Test
     public void excelTest01() {
@@ -26,7 +26,7 @@ public class C02_BlueRentalExcelTest {
         blueRentalPage.password.sendKeys(password);
         blueRentalPage.login2.click();
 
-        //Login oldugumuzu dogrulyalım.
+        //Login oldugumuzu dogrulayalım.
         Assert.assertTrue(blueRentalPage.verify.isDisplayed());
         Driver.bekle(1);
         //Çıkış yapalım
