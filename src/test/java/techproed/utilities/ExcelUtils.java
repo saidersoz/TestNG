@@ -33,5 +33,12 @@ public class ExcelUtils {
         Cell cell = sheet.getRow(rowNumber).getCell(columnNumber);
         return cell.toString();
     }
-
+    //Excelde ki satır sayısını return eder
+    public int rowCount(){
+       return sheet.getLastRowNum();
+    }
+    //Excelde ki sütun sayısını return eder
+    public int columnCount(){
+        return sheet.getRow(0).getLastCellNum();
+    }
 }
