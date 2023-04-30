@@ -1,10 +1,13 @@
 package techproed.tests.Day25_ExcelUtils;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.devtools.v85.network.model.DataReceived;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import techproed.pages.GooglePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
+import techproed.utilities.ReusableMethods;
 
 public class C04_DataProvider {
 
@@ -20,13 +23,13 @@ public class C04_DataProvider {
 
     @Test(dataProvider = "urunler")
     public void testDataProvider(String data) { //DataP. 'daki verileri alabilmek için
-                                                // Test methodumuza String bir parametre ataması yaparız
+        // Test methodumuza String bir parametre ataması yaparız
         System.out.println(data);
     }
 
     @DataProvider(name = "googleTest")
     public static Object[][] urunler() {
-        return new Object[][]{{"Volvo"},{"Mercedes"},{"Audi"},{"Honda"},{"Toyota"},{"Opel"},{"BMW"}};
+        return new Object[][]{{"Volvo"}, {"Mercedes"}, {"Audi"}, {"Honda"}, {"Toyota"}, {"Opel"}, {"BMW"}};
     }
 
     /*
@@ -35,11 +38,20 @@ public class C04_DataProvider {
     method'un adını yazınız
      */
 
-    @Test
+    @Test(dataProvider = "googleTest")
     public void googleTest(String araclar) {
         //Google sayfasına gidiniz
         Driver.getDriver().get(ConfigReader.getProperty("google_url"));
+
         //{"Volvo"},{"Mercedes"},{"Audi"},{"Honda"},{"Toyota"},{"Opel"},{"BMW"} araçlarını aratınız
+        GooglePage googlePage = new GooglePage();
+        googlePage.searchBox.sendKeys(araclar + Keys.ENTER);
+
         //Her aratmmadan sonra sayfa resmi alınız.
+        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.bekle(2);
+        Driver.closeDriver();
+
+
     }
 }
