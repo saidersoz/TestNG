@@ -3,7 +3,14 @@
 <suite name="Blue Rental Car Smoke Test " verbose="1" >
     <test name="Smoke Test"   >
         <packages>
+            <!-- Name değeri geçerli bir package olmalıdır -->
             <package name="techproed.tests.Day24_Properties_Pages.SmokeTest" />
+            <package name="techproed.tests.Day26_DataProvider" />
         </packages>
     </test>
 </suite>
+
+
+
+
+
