@@ -17,4 +17,15 @@ public class DataProviderUtils {
 
         return new Object[][]{{"Ali", "Ali.123"}, {"Ayşe", "Ayşe.123"}, {"Said", "said_987"}};
     }
+
+
+    @DataProvider()
+    public Object[][] customerData() {
+        String path = "src/test/java/Resources/mysmoketestdata.xlsx";
+        String sheetName = "customer_info";
+
+        //Excel Utils objesi oluşturarak  getDataArray() methodu ile iki boyutlu String Array'i DataProvider olarak return ediyorum
+        ExcelUtils excelUtils = new ExcelUtils(path, sheetName);
+        return excelUtils.getDataArrayWithoutFirstRow();
+    }
 }

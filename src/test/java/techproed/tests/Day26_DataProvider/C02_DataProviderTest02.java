@@ -14,10 +14,17 @@ public class C02_DataProviderTest02 {
     }
 
 
-
     @Test(dataProvider = "kullaniciBilgileri", dataProviderClass = DataProviderUtils.class)
     public void test02(String username, String password) {
 
-        System.out.println("Kullanıcı adı: "+username + " || Şifre: " + password);
+        System.out.println("Kullanıcı adı: " + username + " || Şifre: " + password);
+    }
+
+
+    @Test(dataProvider = "customerData", dataProviderClass = DataProviderUtils.class)
+    public void test03(String email, String password) {
+
+        System.out.println("email: " + email + " || password " + password);
+
     }
 }
