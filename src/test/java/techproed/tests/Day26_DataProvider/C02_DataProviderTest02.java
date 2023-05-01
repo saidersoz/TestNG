@@ -6,6 +6,13 @@ import techproed.utilities.DataProviderUtils;
 
 public class C02_DataProviderTest02 {
 
+    /*
+    Burada DataProvider methodlarımızı DataProviderUtils Class'ından alacağız.
+    Başka bir Class'dan DataProvider alacağımız zaman @Test notasyonunun yanında belirmemiz gerkir.
+    ====>>> @Test(dataProvider = "sehirVerileri", dataProviderClass = DataProviderUtils.class)
+     */
+
+
     @Test(dataProvider = "sehirVerileri", dataProviderClass = DataProviderUtils.class)
     public void test01(String ad, String bolge, String plaka) {
 
