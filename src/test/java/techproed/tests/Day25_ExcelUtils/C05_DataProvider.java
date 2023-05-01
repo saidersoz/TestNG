@@ -22,9 +22,9 @@ public class C05_DataProvider {
 
     @DataProvider
     public static Object[][] blueRental() {
-        return new Object[][]{{"sam.walker@bluerentalcars.com","c!fas_art"},
-                {"kate.brown@bluerentalcars.com","tad1$Fas"},
-                {"raj.khan@bluerentalcars.com","v7Hg_va^"}
+        return new Object[][]{{"sam.walker@bluerentalcars.com", "c!fas_art"},
+                {"kate.brown@bluerentalcars.com", "tad1$Fas"},
+                {"raj.khan@bluerentalcars.com", "v7Hg_va^"}
         };
     }
 
@@ -33,7 +33,7 @@ public class C05_DataProvider {
         Driver.getDriver().get(ConfigReader.getProperty("blueRentalCar_url"));
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         blueRentalPage.login1.click();
-        blueRentalPage.email.sendKeys(email, Keys.TAB,password,Keys.ENTER);
+        blueRentalPage.email.sendKeys(email, Keys.TAB, password, Keys.ENTER);
         ReusableMethods.bekle(3);
         Driver.closeDriver();
 
@@ -43,4 +43,5 @@ public class C05_DataProvider {
          */
 
     }
+
 }
