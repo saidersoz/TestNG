@@ -12,4 +12,9 @@ public class DataProviderUtils {
                 {"Ankara","İçAnadolu","06"}};
     }
 
+    @DataProvider()
+    public Object[][] kullaniciBilgileri() {
+
+        return new Object[][]{{"Ali", "Ali.123"}, {"Ayşe", "Ayşe.123"}, {"Said", "said_987"}};
+    }
 }
