@@ -1,13 +1,13 @@
 package techproed.utilities;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExcelUtils {
 
@@ -28,17 +28,81 @@ public class ExcelUtils {
             throw new RuntimeException(e);
         }
     }
+
     //Satır ve sütun sayıları girildiğinde, o hücrede ki veriyi return eder.
-    public String getCellData(int rowNumber,int columnNumber){
+    public String getCellData(int rowNumber, int columnNumber) {
         Cell cell = sheet.getRow(rowNumber).getCell(columnNumber);
         return cell.toString();
     }
+
     //Excelde ki satır sayısını return eder
-    public int rowCount(){
-       return sheet.getLastRowNum();
+    public int rowCount() {
+        return sheet.getLastRowNum();
     }
+
     //Excelde ki sütun sayısını return eder
-    public int columnCount(){
+    public int columnCount() {
         return sheet.getRow(0).getLastCellNum();
+    }
+
+
+    //============Exceldeki datalari 2 boyutlu array seklinde alir===
+    public String[][] getDataArray() {
+        String[][] data = new String[rowCount()][columnCount()];
+        for (int i = 0; i < rowCount(); i++) {
+            for (int j = 0; j < columnCount(); j++) {
+                String value = getCellData(i, j);
+                data[i][j] = value;
+            }
+        }
+        return data;
+    }
+
+    //==============Sutun isimlerini verir==================//
+    public List<String> getColumnsNames() {
+        List<String> columns = new ArrayList<>();
+        for (Cell cell : sheet.getRow(0)) {
+            columns.add(cell.toString());
+        }
+        return columns;
+    }
+
+    //=========Deger, Satir, Sutun girindiginde, O satır ve sutuna girilen veriyi ekler===============//
+    public void setCellData(String value, int rowNum, int colNum) {
+        Cell cell;
+        Row row;
+        try {
+            row = sheet.getRow(rowNum);
+            cell = row.getCell(colNum);
+            if (cell == null) {//if there is no value, create a cell.
+                cell = row.createCell(colNum);
+                cell.setCellValue(value);
+            } else {
+                cell.setCellValue(value);
+            }
+            FileOutputStream fileOutputStream = new FileOutputStream(path);
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //    Bu metot ustdeki metotla birlikde calisir. Overload eder. Parametreleri farklidir
+    public void setCellData(String value, String columnName, int row) {
+        int column = getColumnsNames().indexOf(columnName);
+        setCellData(value, row, column);
+    }
+
+    //    Exceldeki datalari basliksiz olarak 2 boyutlu array seklinde return eder
+    public String[][] getDataArrayWithoutFirstRow() {
+        String[][] data = new String[rowCount() - 1][columnCount()];
+        for (int i = 1; i < rowCount(); i++) {
+            for (int j = 0; j < columnCount(); j++) {
+                String value = getCellData(i, j);
+                data[i - 1][j] = value;
+            }
+        }
+        return data;
     }
 }
