@@ -4,6 +4,7 @@
     <test name="Smoke Test"   >
         <packages>
             <!-- Name değeri geçerli bir package olmalıdır -->
+            <!-- Çalıştımadan önce saveAll veya CTRL+S yapınız -->
             <package name="techproed.tests.Day24_Properties_Pages.SmokeTest" />
             <package name="techproed.tests.Day26_DataProvider" />
         </packages>
