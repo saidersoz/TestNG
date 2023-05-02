@@ -10,7 +10,7 @@ import techproed.utilities.ReusableMethods;
 
 public class C01_DataProviderTest01 {
 
-    @DataProvider()
+    @DataProvider(parallel = true)
     public Object[][] customerData() {
         String path = "src/test/java/Resources/mysmoketestdata.xlsx";
         String sheetName = "customer_info";
