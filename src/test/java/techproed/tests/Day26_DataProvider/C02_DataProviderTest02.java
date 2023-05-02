@@ -28,7 +28,7 @@ public class C02_DataProviderTest02 {
     }
 
 
-    @Test(dataProvider = "customerData", dataProviderClass = DataProviderUtils.class)
+    @Test(dataProvider = "customerData", dataProviderClass = DataProviderUtils.class,groups = "RegressionGroup1")
     public void test03(String email, String password) {
 
         System.out.println("email: " + email + " || password " + password);

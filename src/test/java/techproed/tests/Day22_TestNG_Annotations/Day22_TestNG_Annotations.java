@@ -103,7 +103,7 @@ public class Day22_TestNG_Annotations {
         System.out.println("Test 4");
     }
 
-    @Test(groups = "regression-test", priority = 1) // en son çalışır ==> çünkü default priorty değeri 'dır.
+    @Test(groups = "RegressionGroup1", priority = 1) // en son çalışır ==> çünkü default priorty değeri 'dır.
     public void test05() {
         System.out.println("Test 5");
     }
