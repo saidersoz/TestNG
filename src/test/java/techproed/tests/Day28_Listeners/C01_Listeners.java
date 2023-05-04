@@ -7,6 +7,13 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertTrue;
 
 /*
+    Listeners; TestNG de bir test'in durumunu ve sonucunu izleyen ve bu duruma yanıt veren bir yapıdır.
+    Testlerin passed ve failed olma durumlarını, başlangıç ve bitişini takip eder ve raporlayabilir.
+        Bunun için TestNG'den ITestListener arayüzünü(interface) kullanırız. Oluşturduğumuz Listeners
+    class'ına ITestListener arayüzündeki methodları Override etmek için implements ederiz.
+     */
+
+/*
 Class'ı Listener ile ilişkilendirmek için ya Class başına @Listeners() eklenir
 Yada XML dosyasına ekleme yapılır.
  */
