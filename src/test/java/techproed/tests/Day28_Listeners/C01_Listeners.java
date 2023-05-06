@@ -1,8 +1,11 @@
 package techproed.tests.Day28_Listeners;
 
+import org.openqa.selenium.By;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import techproed.utilities.ConfigReader;
+import techproed.utilities.Driver;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -27,20 +30,9 @@ public class C01_Listeners {
         assertTrue(true);
     }
 
-    @Test
-    public void successTest2() {
-        System.out.println("PASS");
-        assertTrue(true);
-    }
 
     @Test
     public void failTest() {
-        System.out.println("FAIL");
-        assertTrue(false);
-    }
-
-    @Test
-    public void failTest2() {
         System.out.println("FAIL");
         assertTrue(false);
     }
@@ -52,9 +44,10 @@ public class C01_Listeners {
     }
 
     @Test
-    public void skipTest2() {
-        System.out.println("SKIP");
-        throw new SkipException("Atlandı!!!");
+    public void failTestTechPro() {
+        System.out.println("TechPro FAIL TEST");
+        Driver.getDriver().get(ConfigReader.getProperty("techproeducation_url"));
+        Driver.getDriver().findElement(By.xpath("OLMAYAN XPATH"));
     }
 
 
