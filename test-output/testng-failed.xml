@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Blue Rental Car Smoke Test ]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Smoke Test(failed)">
+    <classes>
+      <class name="techproed.tests.Day26_DataProvider.C01_DataProviderTest01">
+        <methods>
+          <include name="dataProviderExcelTest" invocation-numbers="0 2 3"/>
+        </methods>
+      </class> <!-- techproed.tests.Day26_DataProvider.C01_DataProviderTest01 -->
+    </classes>
+  </test> <!-- Smoke Test(failed) -->
+</suite> <!-- Failed suite [Blue Rental Car Smoke Test ] -->
