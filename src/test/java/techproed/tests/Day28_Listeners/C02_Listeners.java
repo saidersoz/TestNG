@@ -31,7 +31,7 @@ public class C02_Listeners {
     @Test
     public void failTestTechpro(){
         System.out.println("TechPro Fail Test");
-        Driver.getDriver().get(ConfigReader.getProperty("techproed_Url"));
+        Driver.getDriver().get(ConfigReader.getProperty("techproeducation_url"));
         Driver.getDriver().findElement(By.xpath("//OlmayanXpath"));//NoSuchElementException
 
     }
