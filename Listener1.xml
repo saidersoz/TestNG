@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ASUS/IdeaProjects/B129TestNGProject/src/test/java/techproed/tests/Day28_Listeners/C02_Listeners.java">
+        <classes>
+            <class name="techproed.tests.Day28_Listeners.C02_Listeners">
+                <methods>
+                    <include name="successTest"/>
+                    <include name="failTest"/>
+                    <include name="skipTest"/>
+                    <include name="failTestTechpro"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
