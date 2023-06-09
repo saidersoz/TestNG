@@ -23,4 +23,22 @@ public class Automationexercise_Page {
     @FindBy(id = "success-subscribe")
     public WebElement successSubscribe;
 
+    @FindBy(xpath = "//a[@href='/products']")
+    public WebElement products;
+
+    @FindBy(xpath = "//div[@role='button']")
+    public WebElement dismissButton1;
+
+    @FindBy(xpath = "//*[text()='All Products']")
+    public WebElement allProducts;
+
+    @FindBy(id = "search_product")
+    public WebElement searchProduct;
+
+    @FindBy(id = "submit_search")
+    public WebElement submitSearch;
+
+    @FindBy(id = "submit_search")
+    public WebElement addToCart;
+
 }
